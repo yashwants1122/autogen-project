@@ -1,0 +1,17 @@
+# 1. LLM
+model_client = OpenAIChatCompletionClient(...)
+
+# 2. Agents
+agent1 = AssistantAgent(...)
+agent2 = AssistantAgent(...)
+
+# 3. Team
+team = RoundRobinGroupChat(
+    [agent1, agent2]
+)
+
+# 4. Termination
+termination = TextMentionTermination(...)
+
+# 5. Run
+result = await team.run(...)
